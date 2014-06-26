@@ -1,7 +1,10 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="polymer-staff-member" noscript>
+<polymer-element name="polymer-staff-member" attributes="name email imgsrc" noscript>
   <template>
-    <div>Staff member</div>
+    <img src="{{imgsrc}}" />
+    <div>
+      {{name}} - {{email}}
+    </div>
   </template>
 </polymer-element>
