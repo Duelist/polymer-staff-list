@@ -1,26 +1,40 @@
 <link rel="import" href="bower_components/polymer/polymer.html">
 
-<polymer-element name="staff-member"
-                 attributes="firstname lastname position degree title phone email image"
-                 noscript>
-  <style>
-    .staff-member {
-      padding: 20px;
-    }
-    .staff-member-header {
-      display: flex;
-      margin-bottom: 10px;
-    }
-  </style>
+<polymer-element
+  name="staff-member"
+  noscript>
   <template>
+    <style>
+      .staff-member {
+        background-color: #FFFFFF;
+        padding: 20px;
+        margin-bottom: 30px;
+      }
+      .staff-member-header {
+        margin-bottom: 10px;
+      }
+      .staff-member-header ::content img {
+        border-radius: 50%;
+        margin: 10px;
+        margin-right: 20px;
+      }
+      .staff-member-header ::content h2 {
+        font-weight: 300;
+      }
+      .staff-member-header ::content h3 {
+        font-weight: 300;
+      }
+      .header-element {
+        display: inline-block;
+      }
+    </style>
     <div class="staff-member">
-      <div class="staff-member-header">
-        <img src="{{image}}" width="100" height="100" />
-        <div><a href="mailto:{{email}}">{{firstname}} {{lastname}}</a></div>
-        <div>{{position}}</div>
-        <div>{{degree}}</div>
-        <div>{{title}}</div>
-        <div>{{phone}}</div>
+      <div class="staff-member-header" layout horizontal center>
+        <div class="header-element"><content select="img"></content></div>
+        <div class="header-element">
+          <div><content select="h2"></content></div>
+          <div><content select="h3"></content></div>
+        </div>
       </div>
       <p><content></content></p>
     </div>
